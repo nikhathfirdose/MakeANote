@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
+import "../App.css";
 
 //sorting operation
 
@@ -37,7 +38,7 @@ const NoteList = () => {
   return (
     <div>
       <h2>Notes List</h2>
-      <div>
+      <div classname="List">
         <label>Sort by: </label>
         <select value={sortBy} onChange={e => setSortBy(e.currentTarget.value)}>
           <option value="NOTE_DEFAULT"> Random </option>

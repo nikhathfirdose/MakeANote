@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import firebase from "../firebase";
+import "../App.css";
 
 const NoteEntry = () => {
   const [title, setTitle] = useState(" ");
@@ -22,10 +23,10 @@ const NoteEntry = () => {
   }
 
   return (
-    <div>
+    <div className="Entry">
       <form onSubmit={Sub}>
-        <div>
-          <label> NoteTitle </label>
+        <div clasname="Inputs">
+          <label> Enter Title </label>
           <input
             type="text"
             value={title}
@@ -33,14 +34,17 @@ const NoteEntry = () => {
           />
         </div>
         <div>
-          <label> DescribeNote </label>
+          <label> Describe Note </label>
           <input
             type="text"
             value={note}
             onChange={e => setNote(e.currentTarget.value)}
           />
         </div>
-        <button> Add Note </button>
+        <button>
+          {" "}
+          <bold> ADD NOTE + </bold>{" "}
+        </button>
       </form>
     </div>
   );

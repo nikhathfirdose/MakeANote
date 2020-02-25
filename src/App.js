@@ -2,17 +2,6 @@ import React from "react";
 import NoteList from "./components/NoteList.jsx";
 import "./App.css";
 import NoteEntry from "./components/NoteEntry.jsx";
-// import firebase from "./firebase";
-
-//this adds a "notes" data into firebase
-// firebase
-//   .firestore()
-//   .collection("notes")
-//   .add({
-//     noteTitle: "something",
-//     describe: "kk"
-//   });
-//totalyy creates a db, so ya we dont need this now
 
 function App() {
   return (
@@ -25,3 +14,15 @@ function App() {
 }
 
 export default App;
+
+// import firebase from "./firebase";
+
+//this adds a "notes" data into firebase
+// firebase
+//   .firestore()
+//   .collection("notes")
+//   .add({
+//     noteTitle: "something",
+//     describe: "kk"
+//   });
+//database was created - checked
