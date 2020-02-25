@@ -1,20 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import firebase from "../firebase";
 
-function NoteEntry() {
+const NoteEntry = () => {
+  const [title, setTitle] = useState(" ");
+  const [note, setNote] = useState(" ");
+
+  function Sub(e) {
+    e.preventDefault(); // prevents refreshing of browser on clicking submit
+
+    firebase
+      .firestore()
+      .collection("notes")
+      .add({
+        title,
+        note
+      })
+      .then(() => {
+        setTitle(" ");
+        setNote(" ");
+      });
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={Sub}>
         <div>
-          <label> Note Title </label>
-          <input type="text" />
+          <label> NoteTitle </label>
+          <input
+            type="text"
+            value={title}
+            onChange={e => setTitle(e.currentTarget.value)}
+          />
         </div>
         <div>
-          <label> Describe Note </label>
-          <input type="text" />
+          <label> DescribeNote </label>
+          <input
+            type="text"
+            value={note}
+            onChange={e => setNote(e.currentTarget.value)}
+          />
         </div>
         <button> Add Note </button>
       </form>
     </div>
   );
-}
+};
 export default NoteEntry;
