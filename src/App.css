@@ -1,3 +1,26 @@
 .body {
   margin: 0;
 }
+.App {
+  color: black;
+  border: solid black 1px;
+  background-color: #fddb27ff;
+  padding: 80px 650px;
+  padding-bottom: 260px;
+}
+label {
+  padding-top: 12px;
+}
+input {
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+button {
+  padding: 5px 39px;
+  font-style: inherit;
+  background-color: lightblue;
+}
+.Entry {
+  border: solid 2px grey;
+  padding: 25px 25px;
+}
