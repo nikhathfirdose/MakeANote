@@ -1,7 +1,7 @@
 import React from "react";
-import NoteList from "./components/notes-list.jsx";
+import NoteList from "./components/NoteList.jsx";
 import "./App.css";
-import NoteEntry from "./components/add-note.jsx";
+import NoteEntry from "./components/NoteEntry.jsx";
 // import firebase from "./firebase";
 
 //this adds a "notes" data into firebase
