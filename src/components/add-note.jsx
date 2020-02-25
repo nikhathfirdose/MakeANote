@@ -12,6 +12,7 @@ function NoteEntry() {
           <label>Note </label>
           <input type="text" />
         </div>
+        <button> Add Note </button>
       </form>
     </div>
   );
