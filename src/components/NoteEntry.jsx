@@ -34,7 +34,7 @@ const NoteEntry = () => {
           />
         </div>
         <div>
-          <label> Describe Note </label>
+          <label> check vsc git e Note </label>
           <input
             type="text"
             value={note}
