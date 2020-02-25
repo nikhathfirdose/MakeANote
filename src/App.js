@@ -1,6 +1,7 @@
 import React from "react";
-import NoteList from "./components/notes-list";
+import NoteList from "./components/notes-list.jsx";
 import "./App.css";
+import NoteEntry from "./components/add-note.jsx";
 // import firebase from "./firebase";
 
 //this adds a "notes" data into firebase
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <h1>My Notes!</h1>
       <NoteList />
+      <NoteEntry />
     </div>
   );
 }
