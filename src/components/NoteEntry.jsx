@@ -34,7 +34,7 @@ const NoteEntry = () => {
           />
         </div>
         <div>
-          <label> check vsc git e Note </label>
+          <label> Describe Note </label>
           <input
             type="text"
             value={note}
@@ -50,4 +50,4 @@ const NoteEntry = () => {
   );
 };
 export default NoteEntry;
-//chenges to check git
+//Vrsion control working?
