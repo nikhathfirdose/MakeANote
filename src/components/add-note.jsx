@@ -5,11 +5,11 @@ function NoteEntry() {
     <div>
       <form>
         <div>
-          <label> Title </label>
+          <label> Note Title </label>
           <input type="text" />
         </div>
         <div>
-          <label>Note </label>
+          <label> Describe Note </label>
           <input type="text" />
         </div>
         <button> Add Note </button>
