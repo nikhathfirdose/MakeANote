@@ -6,6 +6,7 @@ function useNotes() {
 
   useEffect(() => {
     //todo:we need an unsubscribe callback
+    const unsubscribe = firebase; // the callback todo is done
     firebase
       .firestore()
       .collection("notes")
@@ -17,6 +18,7 @@ function useNotes() {
 
         setNotes(newNotes);
       });
+    return () => unsubscribe();
   }, []);
   return notes;
 }
