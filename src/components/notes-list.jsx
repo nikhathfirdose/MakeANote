@@ -5,6 +5,7 @@ function useNotes() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
+    //todo:we need an unsubscribe callback
     firebase
       .firestore()
       .collection("notes")
@@ -37,7 +38,7 @@ const NoteList = () => {
         {notes.map(note => (
           <li key={note.id}>
             <div>
-              {note.noteTitle}:<code> {note.describe}</code>
+              {note.title}:<code> {note.note}</code>
             </div>
             {/* we can create more manual notes by adding ore divs */}
           </li>
