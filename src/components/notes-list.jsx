@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "../firebase";
 
-function NoteList() {
+function useNotes() {
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("notes")
+      .onSnapshot(snapshot => {
+        const newNotes = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+
+        setNotes(newNotes);
+      });
+  }, []);
+  return notes;
+}
+
+const NoteList = () => {
+  const notes = useNotes();
   return (
     <div>
       <h2>Notes List</h2>
@@ -13,16 +34,23 @@ function NoteList() {
         </select>
       </div>
       <ol>
-        <li>
-          <div>
-            First Note
-            <code> date</code>
-          </div>
-          {/* we can create more manual notes by adding ore divs */}
-        </li>
+        {notes.map(note => (
+          <li key={note.id}>
+            <div>
+              {note.noteTitle}:<code> {note.describe}</code>
+            </div>
+            {/* we can create more manual notes by adding ore divs */}
+          </li>
+        ))}
       </ol>
     </div>
   );
-}
+};
 
 export default NoteList;
+// const newNotes = snapshot.doc.map(doc => ({
+//   id: doc.id,
+//   ...doc.data()
+// }));
+
+// setNotes(newNotes);
