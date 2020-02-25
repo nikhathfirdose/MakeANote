@@ -50,3 +50,4 @@ const NoteEntry = () => {
   );
 };
 export default NoteEntry;
+//chenges to check git
