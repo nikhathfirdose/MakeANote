@@ -42,8 +42,7 @@ const NoteEntry = () => {
           />
         </div>
         <button>
-          {" "}
-          <bold> ADD NOTE + </bold>{" "}
+          <bold> ADD NOTE + </bold>
         </button>
       </form>
     </div>
